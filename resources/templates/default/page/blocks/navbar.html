@@ -1,0 +1,286 @@
+<nav id="gadafic-main-nav" class="gadafic-main-nav theme-site navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" gadafic-app="gadafic">
+						
+	<div class="container-fluid">
+							
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">{var.toggle.nav}</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- logo -->
+			<a class="navbar-brand gadafic-logo" href="http://www.gadafic.edu">
+				<img class="logo-img" alt="OpenAdmin" src="{path.img}/gadafic-logo-text.png" />
+			</a>     
+		</div>
+		
+		<div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="gadafic-app-item gadafic-app-documents" gadafic-target-app="documents"><a href="#"><span class="fa fa-folder-open mg-rg-6"></span>{common.label.documents}</a></li>
+				<li class="gadafic-app-item gadafic-app-social" gadafic-target-app="social"><a href="#"><span class="fa fa-share-alt mg-rg-6"></span>{common.label.social}<span class="badge gadafic-social-alert-badge">4</span></a></li>
+			</ul>
+		</div>
+		
+		<ul class="nav navbar-nav navbar-right">
+			
+			<li  class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-graduation-cap mg-rg-6"></span><b>Créer un nouveau compte</b><span class="caret mg-lf-6"></span></a>
+				<ul class="dropdown-menu right-nav-dp" data-dropdown-in="flipInY" data-dropdown-out="flipOutY" style="width: 300px">
+					<li>
+						<div class="row">
+							
+							<div class="col-md-12">
+							
+								<!-- Registration -->
+								<form id="registration-form" name="registration-form" class="login-form">
+								
+									<div class="social-buttons">
+										<center><div class="iconSpecial"><i class="fa fa-graduation-cap mg-rg-6"></i></div></center>
+									</div>
+								
+									<div class="divider-fine"></div>
+									
+									<br />
+									
+									<div class="content" style="height: 200px">	
+									
+										<div id="registration-step-1-div">	
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input id="register-username" type="text" class="form-control validate-field" name="username" value="" placeholder="Nom" required />                                        
+											</div>
+										
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-users"></i></span>
+												<input id="register-surname" type="text" class="form-control validate-field" name="surname" placeholder="Prénom" required />
+											</div>
+										
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="register-birthdate" type="text" class="form-control validate-field" name="birthdate" placeholder="Date de naissance" required />
+											</div>
+										</div>
+										
+										<div id="registration-step-2-div" style="display:none">	
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input id="register-country" type="text" class="form-control validate-field" name="country" value="" placeholder="Pays" required />                                        
+											</div>
+										
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input id="register-city" type="text" class="form-control validate-field" name="city" value="" placeholder="Ville" required />                                     
+											</div>
+											
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-users"></i></span>
+												<input id="register-phone" type="text" class="form-control validate-field" name="phone" placeholder="Téléphone" required />
+											</div>
+										
+										</div>
+										
+										<div id="registration-step-3-div" style="display:none">
+											
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="register-pseudo" type="text" class="form-control validate-field" name="pseudo" placeholder="Pseudo" required />
+											</div>
+											
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="register-email" type="text" class="form-control validate-field" name="email" placeholder="Email" required />
+											</div>
+											
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="register-password" type="text" class="form-control validate-field" name="password" placeholder="Password" required />
+											</div>
+											
+										</div>
+										
+										<div id="registration-step-4-div" style="display:none">
+										</div>
+										
+									</div>
+
+									<div class="footer">
+										<button id="registration-form-submit-btn" type="submit" class="button button-uncompleted"><b>Suivant</b>&nbsp;&nbsp;<span class="fa fa-arrow-right"></span></button>
+									</div>
+								
+								</form>
+									
+							</div>
+							
+						</div>
+						
+					</li>
+				</ul>
+			</li>
+				
+			<li class="dropdown">
+				
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-plug mg-rg-6"></span><b>{common.label.connect}</b> <span class="caret"></span></a>
+			
+				<ul class="dropdown-menu right-nav-dp" data-dropdown-in="flipInX" data-dropdown-out="flipOutX" >
+					<li>
+						<div class="row">
+							
+							<div class="col-md-12">
+							
+								<!-- Login -->
+								<form id="login-form" name="login-form" class="login-form" action="" method="post">
+								
+									<div class="social-buttons">
+										<center><div class="iconSpecial"><i class="fa fa-user mg-rg-6"></i></div></center>
+									</div>
+								
+									<div class="divider-fine"></div>
+									
+									<br />
+									
+									<div class="content" style="height: 180px">	
+									
+										<div id="login-step-1-div" >
+											
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Identifiant">                                        
+											</div>
+										
+											<div style="margin-bottom: 25px" class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+												<input id="login-password" type="password" class="form-control" name="password" placeholder="Mot de passe">
+											</div>
+											<a href="#" style="float: right; font-size: 85%">Mot de passe oublié ?</a>
+										</div>
+										
+										<div id="login-step-2-div" style="display:none">
+										</div>
+									
+									</div>
+
+									<div class="footer">
+										<button id="login-form-submit-btn" class="button"><span class="fa fa-unlock mg-rg-6"></span><b>Login</b></button>
+									</div>
+								
+								</form>
+									
+							</div>
+							
+						</div>
+						
+					</li>
+				</ul>
+				
+			</li>
+				
+		</ul>
+	
+	</div>
+	
+</nav>
+<script type="text/javascript">
+	
+	var registrationStep = 1;
+	var loginStep = 1;
+	
+	$("#login-form-submit-btn").click(function(event){
+		event.preventDefault();
+		
+		if(Util.globals.processingRequest) return;
+		
+		var btn = $(this);
+		var f = $("#login-form");
+		
+		var step1Div = $("#login-step-1-div");
+		var step2Div = $("#login-step-2-div");
+		
+		var step1Ok = Util.validateForm(step1Div);
+		
+		if(loginStep == 1) {
+			if(step1Ok) {
+				step1Div.hide({effect: "slide", direction: "left", duration: 200});
+				window.setTimeout( function() { 
+					step2Div.show(); 
+				}, 220 );
+				
+				loginStep = 2;
+			}
+		}
+		
+		if(loginStep == 2) {
+			Util.showWaiterInside(step2Div, 150, 150);
+			btn.addClass("button-waiting-status");
+			
+			Util.globals.processingRequest = true;
+		}
+		
+	});
+	
+	$("#registration-form-submit-btn").click(function(event){
+
+		event.preventDefault();
+		
+		if(Util.globals.processingRequest) return;
+		
+		var btn = $(this);
+		var f = $("#registration-form");
+		
+
+		var step1Div = $("#registration-step-1-div");
+		var step2Div = $("#registration-step-2-div");
+		var step3Div = $("#registration-step-3-div");
+		var step4Div = $("#registration-step-4-div");
+		
+		var step1Ok = Util.validateForm(step1Div);
+		
+		
+		
+		if(registrationStep == 1) {
+			if(step1Ok) {
+				step1Div.hide({effect: "slide", direction: "left", duration: 200});
+				window.setTimeout( function() { 
+					step2Div.show({effect: "slide", direction: "right", duration: 500}); 
+				}, 220 );
+				
+				registrationStep = 2;
+			}
+		}
+		else if(registrationStep == 2) {
+			
+			var step2Ok = Util.validateForm(step2Div);
+			
+			if(step2Ok) {
+				step2Div.hide({effect: "slide", direction: "left", duration: 200});
+				window.setTimeout( function() { 
+					step3Div.show({effect: "slide", direction: "right", duration: 500}); 
+				}, 220 );
+				registrationStep = 3;
+				btn.removeClass("button-uncompleted");
+				btn.html("<b>"+JSLanguage.translate("form.complete")+"</b>&nbsp;&nbsp;<span class=\"fa fa-check\"></span></button>");
+			}
+		}
+		else if(registrationStep == 3) {
+			
+			var step3Ok = Util.validateForm(step3Div);
+			
+			if(step3Ok) {
+				step3Div.hide({effect: "slide", direction: "left", duration: 200});
+				window.setTimeout( function() { 
+					step4Div.show(); 
+				}, 220 );
+				registrationStep = 4;
+				
+			}
+		}
+		
+		if(registrationStep == 4) {
+			Util.showWaiterInside(step4Div, 150, 150);
+			btn.addClass("button-waiting-status");
+			
+			Util.globals.processingRequest = true;
+		}
+
+	});
+</script>

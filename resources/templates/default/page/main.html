@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>{action.page.title}</title>
+		<link type="image/x-icon" rel="shortcut icon" href="{path.favicon}" />
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="{path.css}/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="{path.vendors}/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="{path.vendors}/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{path.css}/animate.min.css">
+		
+		
+		<link rel="stylesheet" href="{path.css}/themes/gadafic/theme.css" class="theme">
+		<link rel="stylesheet" href="{path.css}/main.css" class="theme">
+		<link rel="stylesheet" href="{path.css}/languages.css" class="theme">
+		
+		<link rel="stylesheet" href="{path.css}/dropdowns-effects.css">
+		<link rel="stylesheet" href="{path.css}/chat.css">
+		<link rel="stylesheet" href="{path.vendors}/tooltipster/css/tooltipster.bundle.min.css">
+		
+		<link rel="stylesheet" href="{path.css}/notifs.css">
+		
+		<!-- Scripts -->
+		<script src="{path.vendors}/jquery/jquery.min.js"></script>
+		<script src="{path.vendors}/jquery/ui/jquery-ui.min.js"></script>
+		<script src="{path.vendors}/bootstrap/js/bootstrap.min.js"></script>   
+		
+		<script src="{path.vendors}/tooltipster/js/tooltipster.bundle.min.js"></script>
+		<script src="{path.vendors}/typed/js/typed.min.js"></script>
+		<script src="{path.vendors}/nicescroll/jquery.nicescroll.min.js"></script>
+		<script src="{path.js}/languages/{path.language}/common.js"></script>
+		<script src="{path.js}/utils.js"></script>
+		
+	</head>
+	
+	<body>
+		
+		<!-- nav bar -->
+		{page.navbar}
+		
+		<div style="background-color: #222; opacity: 0.1; position: absolute; top: 50px; height: 93.5%; width: 100%"></div>
+		
+		<!-- page container -->
+		<div id="pagecontainer">{page.container}</div>
+		
+		<!-- dialogs -->
+		<div id="dialog-confirm" align=center></div>
+		
+		<!-- Chat -->
+		{page.visitorchat}
+		
+		<!-- footer -->
+		{page.footer}
+		
+		<script src="{path.js}/dropdowns-effects.js"></script>
+		
+		<script type="text/javascript">
+			var nsCf = {
+				cursorcolor:"#4682B4",
+				cursoropacitymax:0.7,
+				cursorwidth:12,
+				cursorborder:"1px solid skyblue",
+				cursorborderradius:"2px",
+				background:"#ccc",
+				verticrailenabled:true,
+				horizrailenabled:false,
+				boxzoom :false
+			};
+			
+			$("#pagecontainer")
+			.height(screen.height-100)
+			.niceScroll(nsCf);
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<div id="gadafic-index-chat-box" class="gadafic-index-chat-box">
+	<div class="box-header" style="height: 55px; min-width: 60px; background-color: rgba(16, 16, 16, 0.35); box-shadow: inset -2px 4px 6px -2px rgba(168, 168, 168, 1); padding: 10px; border-radius: 60px; margin-top: -10px; margin-left: -10px; white-space: nowrap; cursor: pointer" >
+		<span class="fa fa-comments user-avatar" style="font-size: 33px; right: 15px"></span>
+		<span class="user-name" style="display: inline-block; position: relative; top: -6px; left: 15px;"><strong>Hello, Welcome !</strong></span>
+		<!--span class="ui-corner-all unseen-msg-n">2</span-->
+		<span class="fa fa-close chat-closer" style="display: none"></span>
+	</div>
+	<div id="tchat_with_msg_box_box_identifier" class="tbox-ctner" style="display:none;">
+		<div id="tchat_with_msg_box_content_box_identifier" style="height:383px;padding:8px;overflow-y:hidden;" max-reached="0" prev-loading="0" box-nbfetch="0" box-total="0" msg-fetching="0" >
+			<div class="container">
+
+				
+				<div class="bubble">
+					See: <span style="font-size: 22px">&#x1f602; &#x1F923; &#x1F60D; &#x1F618;</span>
+				</div>
+				
+				<div class="bubble bubble--alt">
+					I need to get ... <span style="font-size: 22px">&#x1F61C;</span>
+				</div>
+				
+				<div class="bubble">
+					A bubble containing lots 
+					and lots and lots and 
+					lots of content on multiple lines
+				</div>
+				
+				<div class="bubble bubble--alt">
+					Bubble with image
+					<img src="http://placekitten.com/800/600" alt="" />
+				</div>
+				
+				<div class="bubble">
+					Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+				</div>
+				
+			</div>
+		</div>
+		<div style="display:block;width:100%;height:60px;background-color:#FFF; border-radius: 60px; vertical-align: middle; box-shadow: inset -2px 4px 6px -2px rgba(168, 168, 168, 1)">
+			<div class="row" id="tchat-box-text-holder">
+				<div class="col-md-10">
+					<textarea id="tchat-text-box" id-user="id_user" type-user="type_user" placeholder="Write us..." text-focused="0" style="height:60px;width:100%; padding:8px;background-color:#FFF;padding-left:12px; border: 0; border-radius: 60px; resize: none; color: #000; font-size: 90%" ></textarea>
+				</div>
+				<div class="col-md-2" valign="middle">
+					<center><span id="tchat-box-options-show-btn" class="fa fa-plus-circle" style="color: #444; font-size: 60px; margin-top: -2px; margin-left: -30px"></span></center>
+				</div>
+			</div>
+			<div class="row" id="tchat-box-options-holder" valign="middle" style="display: none; height: 60px; vertical-align: middle; padding-left: 5px; padding-top: 8px; ">
+				<div class="col-md-3" valign="middle">
+					<center><span class="fa fa-smile-o" style="color: #444; font-size: 40px;"></span></center>
+				</div>
+				<div class="col-md-3" valign="middle">
+					<center><span class="fa fa-photo" style="color: #444; font-size: 40px;"></span></center>
+				</div>
+				<div class="col-md-3" valign="middle">
+					<center><span class="fa  fa-folder-open" style="color: #444; font-size: 40px;"></span></center>
+				</div>
+				<div class="col-md-3" valign="middle">
+					<center><span id="tchat-box-options-hide-btn" class="fa fa-reply" style="color: #444; font-size: 40px;"></span></center>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	var tBox = $('#gadafic-index-chat-box');
+	var boxState = 0; //0: closed; 1: opened
+	
+	tBox.find('.box-header')
+	.click(function(){
+		if(boxState==0){
+			tBox.animate({ 'width': '350px' }, 500 ); tBox.find('.box-header').css({'margin-left':'0px'});
+			window.setTimeout( function() { 
+				tBox.animate({ 'height': '500px' }, 500 );
+				tBox.find('.tbox-ctner').fadeIn();
+				tBox.find('.box-header .chat-closer').show(); 
+			}, 500 );
+			boxState = 1;
+		}
+		else{
+			tBox.find('.tbox-ctner').fadeOut(); tBox.animate({ 'height': '60px' }, 500 );
+			window.setTimeout( function() { 
+				tBox.animate({ 'width': '60px' }, 500 );
+				tBox.find('.box-header').css({'margin-left':'-10px'}); 
+				tBox.find('.box-header .chat-closer').hide(); 
+			}, 500 );
+			boxState = 0;
+		}
+	});
+	
+	$('#tchat-box-options-show-btn').click(function(){
+		$('#tchat-box-text-holder').fadeOut(300);
+		window.setTimeout(function() { 
+			$('#tchat-box-options-holder').fadeIn(500); 
+		}, 300);
+	});
+	
+	$('#tchat-box-options-hide-btn').click(function(){
+		$('#tchat-box-options-holder').fadeOut(300);
+		window.setTimeout(function() { 
+			$('#tchat-box-text-holder').fadeIn(500); 
+		}, 300);
+	});
+	
+</script>

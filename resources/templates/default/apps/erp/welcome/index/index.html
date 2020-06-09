@@ -1,0 +1,102 @@
+<div id="gadafic-search-block" style="height: 25%; background: #0009; min-height: 180px; margin-top: 50px; padding-top: 30px; border-bottom: 1px solid #8C8C8C; box-shadow: inset -2px 9px 7px -2px rgba(168, 168, 168, 1);">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<img alt="OpenAdmin" src="{path.img}/gadafic-search-logo.png" style="width: 100%; max-width: 500px; margin-left: -20px" />
+		<div class="row">
+			<input type="text" class="form-control gadafic-search-input" placeholder="Search University, School, Student, Teacher, Scholarship, Document, Author, Ressource..."/>
+			<span title="Search something..." style="position: relative; display: inline-block; float: right; left: -2px; top: 8px; cursor: pointer; height: 55px; width: 55px"></span>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+		
+<div class="" id="gadafic-main-page-content" style="height: 71.3%; padding-top: 50px; background: #00000080; border-top: 1px solid #0606064D; box-shadow: inset 0px 13px 7px 0px rgba(168, 168, 168, 0.2);text-align: center">		
+	<button type="button" class="btn btn-primary btn-lg btn3d btn3d-round"><span class="fa fa-university btn3d-icon"></span><span class="btn3d-text">Schools</span></button>
+	<button type="button" class="btn btn-success btn-lg btn3d btn3d-round"><span class="glyphicon glyphicon-education btn3d-icon"></span><span class="btn3d-text">Inscriptions</span></button>
+	<button type="button" class="btn btn-magick btn-lg btn3d btn3d-round"><span class="fa fa-cc-visa btn3d-icon"></span><span class="btn3d-text">Payements</span></button>
+	<button type="button" class="btn btn-danger btn-lg btn3d btn3d-round"><span class="fa fa-heart btn3d-icon"></span><span class="btn3d-text">Contribute</span></button>
+	<div style="height: 100px"></div><br />
+	<span id="gadafic-slogan-slides"></span>
+
+	<div id="gadafic-slogan-slides-text" style="display: none; ">
+		<div class="slogan">Hello, Welcome on <span style="font-size: 150%">OpenAdmin !</span></div>
+		<div class="slogan"><span class="fa fa-quote-left"></span> A non-pofit Organization for education... <span class="fa fa-quote-right"></span></div>
+		<div class="slogan">An unfold Database for all the educational sector Actors.</div>
+	</div>
+	
+</div>
+		
+
+	
+<script type="text/javascript">
+
+	var appNav = $('#gadafic-main-nav');
+	
+	appNav.find('.gadafic-app-item')
+	.click(function(){
+		var appItemMenu = $(this);
+		targetApp = appItemMenu.attr('gadafic-target-app');
+		appNav.removeClass('theme-gadafic').removeClass('theme-documents').removeClass('theme-social');
+		appNav.addClass('theme-'+targetApp);
+		appNav.attr('gadafic-app', targetApp);
+		
+		appNav.find('.gadafic-app-item').removeClass('active');
+		appItemMenu.addClass('active');
+	});
+	
+	
+	//Tchat box
+	/*var tBox = $('#gadafic-index-chat-box');
+	var boxState = 0; //0: closed; 1: opened
+	
+	tBox.find('.box-header')
+	.click(function(){
+		if(boxState==0){
+			tBox.animate({ 'width': '350px' }, 500 ); tBox.find('.box-header').css({'margin-left':'0px'});
+			window.setTimeout( function() { 
+				tBox.animate({ 'height': '500px' }, 500 );
+				tBox.find('.tbox-ctner').fadeIn();
+				tBox.find('.box-header .chat-closer').show(); 
+			}, 500 );
+			boxState = 1;
+		}
+		else{
+			tBox.find('.tbox-ctner').fadeOut(); tBox.animate({ 'height': '60px' }, 500 );
+			window.setTimeout( function() { 
+				tBox.animate({ 'width': '60px' }, 500 );
+				tBox.find('.box-header').css({'margin-left':'-10px'}); 
+				tBox.find('.box-header .chat-closer').hide(); 
+			}, 500 );
+			boxState = 0;
+		}
+	});*/
+	
+	/*$('#tchat-box-options-show-btn').click(function(){
+		$('#tchat-box-text-holder').fadeOut(300);
+		window.setTimeout(function() { 
+			$('#tchat-box-options-holder').fadeIn(500); 
+		}, 300);
+	});
+	
+	$('#tchat-box-options-hide-btn').click(function(){
+		$('#tchat-box-options-holder').fadeOut(300);
+		window.setTimeout(function() { 
+			$('#tchat-box-text-holder').fadeIn(500); 
+		}, 300);
+	});*/
+	
+	var sloganSlides = [];
+	
+	$('#gadafic-slogan-slides-text div.slogan').each(function(){ sloganSlides.push($(this).html()); });
+	
+	var t = new Typed('#gadafic-slogan-slides', {
+		strings: sloganSlides,
+		typeSpeed: 40,
+		backSpeed: 20,
+		startDelay: 3000,
+		backDelay: 3000,
+		smartBackspace: false,
+		loop: true
+	});
+	
+</script>

@@ -1,0 +1,35 @@
+<div id="gadafic-xdev-wg-footer" >
+	<div class="col-md-6 gadafic-i18n-switch">
+		<a href="#" class="a-i18n-switch">{common.footer.terms}</a> <span class="a-sep">|</span>
+		<a href="#" class="a-i18n-switch">{common.footer.privacy}</a> <span class="a-sep">|</span>
+		<a href="#" class="a-i18n-switch language-switch-link" data-tooltip-content="#languages-links" >{common.footer.languages}</a>
+	</div>
+	<div class="col-md-6 gadafic-copy" > <span>&copy; &nbsp; {common.footer.copyright}&nbsp;&nbsp;<a href="http://www.xdev-workgroup.com" target="_" >{var.author}</a>&nbsp;&nbsp;{var.bottomdate}</span></div>
+</div>
+
+<div class="tooltip_templates" style="display: none;">
+	<div id="languages-links">
+		{languages.list}
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$('.language-switch-link').tooltipster({
+		contentCloning: true,
+		animation: 'swing',
+		delay: 200,
+		theme: 'tooltipster-noir',
+		contentAsHTML: true,
+		interactive: true,
+		trigger: 'click',
+		triggerOpen: {
+			mouseenter: true
+		},
+		triggerClose: {
+			click: true,
+			scroll: true
+		}
+	});
+	
+</script>
