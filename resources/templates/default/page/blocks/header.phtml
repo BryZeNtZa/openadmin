@@ -1,0 +1,20 @@
+<title><?=$this->translate($title)?></title>
+
+<base href="resources/templates/default/public/" target="_blank">
+
+<!-- Meta -->
+<?php foreach($meta as $mt): ?>
+	<meta <?php foreach($mt as $attr=>$val): ?> <?=$attr?>="<?=$val?>" <?php endforeach ?>>
+<?php endforeach ?>
+
+<link type="image/x-icon" rel="shortcut icon" href="<?=$favicon?>" />
+
+<!-- Styles -->
+<?php foreach($styles as $st): ?>
+	<link rel="stylesheet" href="<?=$st?>" />
+<?php endforeach ?>
+
+<!-- Scripts -->
+<?php foreach($scripts as $sc): ?>
+	<link rel="stylesheet" href="<?=$sc?>" />
+<?php endforeach ?>

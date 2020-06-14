@@ -16,7 +16,7 @@ class Navbar {
 	
 	public function __construct(Page $page) {
 		
-		$this->page = $page;
+		/*$this->page = $page;
 		$this->userlogged = $page->request->getSession()->isLogged();
 		
 		if($this->userlogged) {
@@ -24,12 +24,12 @@ class Navbar {
 		}
 		else {
 			$this->page->template->set_file('navbar', 'page/blocks/navbar.html');
-		}
+		}*/
 
 	}
 	
 	public function load() {
-		$this->page->template->set_var('page.navbar', $this->page->template->parse('navbarvar', 'navbar'));
+		//$this->page->template->set_var('page.navbar', $this->page->template->parse('navbarvar', 'navbar'));
 	}
 	
 }

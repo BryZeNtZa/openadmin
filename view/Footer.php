@@ -9,43 +9,55 @@
 
 namespace OpenAdmin\View;
 
+use OpenAdmin\View\Page;
+
 class Footer {
 
 	private $page;
+	private $template;
 	
 	public function __construct(Page $page) {
 		$this->page = $page;
-		$this->page->template->set_file('footer', 'page/blocks/footer.html');
+		$this->template = $this->page->engine->make('blocks::footer');
 	}
 	
 	public function load() {
-		$this->page->template->set_var('page.footer', $this->page->template->parse('footervar', 'footer'));
-		$this->loadFooterLanguages();
+		$this->setLanguagesMenu();
+		$this->setCopyrights();
+		$template = $this->template;
+		$this->page->engine->registerFunction('loadFooter', function() use ($template) {
+			return $template->render();
+		});
 	}
 	
-	public function loadFooterLanguages() {
-		
+	public function setLanguagesMenu() {
+
+		$menu = array();
+
 		$languages = $this->page->request->getConfig()->getLanguages();
 		
 		$n_lg = count($languages);
 		$n_colm = 3;
 		$n_lines = intval($n_lg/$n_colm);
 
-		$listHtml = '';
 		$printed = 0;
 		for($i=1; $i<=$n_colm; $i++) {
-			$listHtml .= '<div class="col-md-4"><ul role="menu">';
-			for($j=$printed+1; $j<=$i*$n_lines; $j++) {
+			for($j=$printed+1; $j<=$i*$n_lines; $j++,$printed++) {
 				if( !isset($languages[$j]) ) break;
-				$listHtml .= '<li><span class="lang-sm lang-lbl" lang="' . $languages[$j]['code'] . '"></span></li>';
-				$printed++;
+				$menu[$i-1][$j] = $languages[$j];
 			}
-			$listHtml .= '</ul></div>';
 		}
 
-		$this->page->template->set_var('var.author', $this->page->request->getConfig()->getAuthor());
-		$this->page->template->set_var('var.bottomdate', '2012-' . date('Y'));
-		$this->page->template->set_var('languages.list', $listHtml);
+		$this->template->data(['langsmenu' => $menu]);
 	}
+	
+	public function setCopyrights() {
+		$copyrights = [
+			'author' => $this->page->request->getConfig()->getAuthor(),
+			'date' => '2012-' . date('Y'),
+		];
+		$this->template->data($copyrights);
+	}
+	
 }
 	

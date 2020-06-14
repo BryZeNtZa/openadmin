@@ -25,7 +25,7 @@ abstract class Query {
     }
 
 	public abstract function build(): void;
-	public abstract function run(): boolean|int|array;
+	public abstract function run(): boolean|int|array|Results;
 
 	public function sql(): string {
 		return $this->sql;

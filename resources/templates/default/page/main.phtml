@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+	<head>
+		<?=$this->loadHeader()?>
+	</head>
+	
+	<body>
+		SUPERBE CA MARCHE PARFAITEMENT  !!!
+		<!-- nav bar -->
+		<div id="app-page-h-nav"><?=$this->section('hnav')?></div>
+
+		<!-- page container -->
+		<div id="app-page-content"><?=$this->section('content')?></div>
+		
+		<!-- dialogs -->
+		<div id="app-page-dialogs"><?=$this->section('dialogs')?></div>
+		
+		<!-- Chat -->
+		<?php if ($this->section('vchat')): ?>
+			<div id="app-page-visitors-chat"><?=$this->section('vchat')?></div>
+		<?php endif ?>
+
+		<!-- footer -->
+		<div id="app-page-footer"><?=$this->loadFooter()?></div>
+		
+		<div style="display: none; background-color: #222; opacity: 0.1; position: absolute; top: 50px; height: 93.5%; width: 100%"></div>
+		
+	</body>
+</html>

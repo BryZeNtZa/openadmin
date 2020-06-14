@@ -12,21 +12,27 @@ namespace OpenAdmin\Erp\Welcome\Index\Action;
 use OpenAdmin\Core\Request;
 use OpenAdmin\Core\Action;
 
-use Xdev\Workgroup\Architecture\BigData;
+/*use Xdev\Workgroup\Architecture\BigData;
 use Xdev\Workgroup\Architecture\BigTable\UsersBigTable as Users;
+use Xdev\Workgroup\Architecture\BigTable\UsersCredentialsBigTable as UsersCredentials;*/
 
 class Index extends Action {
 	
 	public function __construct(Request $request) {
 		parent::__construct($request);
-		$this->tplvar = 'page.body';
 	}
 	
 	public function perform() {
-		$this->template->set_var('path.language', $this->request->getConfig()->getLanguageStr($this->language));
+		
+		$this->page->setTitle('Bonjour à tous !');
+		/*$bigData = new BigData();
 
-		$bigData = new BigData();
-		$users = $bigData->getBigtable(Users:class)
-		$users->findUser($username, $password);
+		$usersCredentials = $bigData->getBigtable(UsersCredentials:class);
+		$usersCredentialsResults = $usersCredentials->findUser($username, $password);
+		
+		if(!empty($usersDatas)) {
+			$users = $bigData->getBigtable(Users:class);
+			$userData = $usersCredentialsResults->first();
+		}*/
 	}
 }

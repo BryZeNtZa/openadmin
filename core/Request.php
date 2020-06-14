@@ -29,7 +29,7 @@ class Request {
 
     public function __construct($uri = null) {
 
-		$this->uri = ($uri == null) ? $_SERVER['REQUEST_URI']: $uri;
+		$this->uri = ($uri == null) ? $_SERVER['REQUEST_URI'] : $uri;
 
 		$this->session = new Session;
 		$this->session->initialize();

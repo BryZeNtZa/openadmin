@@ -1,0 +1,55 @@
+<div id="gadafic-xdev-wg-footer" >
+	<div class="col-md-6 gadafic-i18n-switch">
+		<a href="#" class="a-i18n-switch">
+			<?=$this->translate('common.footer.terms')?>
+		</a>
+		<span class="a-sep">|</span>
+		<a href="#" class="a-i18n-switch">
+			<?=$this->translate('common.footer.privacy')?>
+		</a>
+		<span class="a-sep">|</span>
+		<a href="#" class="a-i18n-switch language-switch-link" data-tooltip-content="#languages-links" >
+			<?=$this->translate('common.footer.languages')?>
+		</a>
+	</div>
+	<div class="col-md-6 gadafic-copy" >
+		<span>
+			&copy; &nbsp;<?=$this->translate('common.footer.copyright')?>
+			&nbsp;&nbsp;<a href="http://www.xdev-workgroup.com" target="_" ><?=$this->e($author)?></a>
+			&nbsp;&nbsp;<?=$this->e($date)?>
+		</span>
+	</div>
+</div>
+
+<div class="tooltip_templates" style="display: block;">
+	<div id="languages-links">
+		<?php foreach($langsmenu as $langs): ?>
+			<div class="col-md-4"><ul role="menu">
+			<?php foreach($langs as $lang): ?>
+				<li><span class="lang-sm lang-lbl" lang="<?=$lang['code']?>"></span></li>
+			<?php endforeach ?>
+			</ul></div>
+		<?php endforeach ?>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$('.language-switch-link').tooltipster({
+		contentCloning: true,
+		animation: 'swing',
+		delay: 200,
+		theme: 'tooltipster-noir',
+		contentAsHTML: true,
+		interactive: true,
+		trigger: 'click',
+		triggerOpen: {
+			mouseenter: true
+		},
+		triggerClose: {
+			click: true,
+			scroll: true
+		}
+	});
+	
+</script>
