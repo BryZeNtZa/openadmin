@@ -46,22 +46,18 @@ class Page {
 			case 'header':
 				(new Header_($this))->load();
 			break;
-			case 'navbar':
-				(new Navbar($this))->load();
+			case 'content':
+				(new Content($this))->load();
 			break;
 			case 'footer':
 				(new Footer($this))->load();
-			break;
-			case 'tchat':
-				if(!$request->getSession()->isLogged()) {
-					(new VisitorChat($this))->load();
-				}
 			break;
 		}
 	}
 	
 	public function loadAllBlocks() {
 		$this->load('header');
+		$this->load('content');
 		$this->load('footer');
 	}
 

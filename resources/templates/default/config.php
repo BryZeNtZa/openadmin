@@ -44,4 +44,14 @@ return [
 	'tpl.footer.scripts' => [
 		'js/dropdowns-effects.js',
 	],
+	
+	// Blocks configuration
+	'blocks' => [
+		'navbar' => [
+			'position' => 'top'
+		],
+		'tchat' => [
+			'position' => 'bottom-right'
+		],
+	],
 ];

@@ -1,0 +1,14 @@
+<?=$this->lodNav()?>
+
+<!-- page container -->
+<div id="app-page-content"><?=$this->section('content')?></div>
+
+<!-- dialogs -->
+<div id="app-page-dialogs"><?=$this->section('dialogs')?></div>
+
+<!-- Chat -->
+<?php if ($this->section('vchat')): ?>
+	<div id="app-page-visitors-chat"><?=$this->section('vchat')?></div>
+<?php endif ?>
+
+<div class="app-default-overlay"></div>
