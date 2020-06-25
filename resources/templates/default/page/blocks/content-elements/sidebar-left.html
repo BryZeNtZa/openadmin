@@ -1,0 +1,101 @@
+<nav id="gadafic-main-nav" class="gadafic-main-nav theme-site navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" gadafic-app="gadafic">
+						
+	<div class="container-fluid">
+							
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">{var.toggle.nav}</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- logo -->
+			<a class="navbar-brand gadafic-logo" href="http://www.gadafic.edu">
+				<img class="logo-img" alt="OpenAdmin" src="{path.img}/gadafic-logo-text.png" />
+			</a>     
+		</div>
+		
+		<div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="gadafic-app-item gadafic-app-documents" gadafic-target-app="documents"><a href="#"><span class="fa fa-folder-open mg-rg-6"></span>{common.label.documents}</a></li>
+				<li class="gadafic-app-item gadafic-app-social" gadafic-target-app="social"><a href="#"><span class="fa fa-share-alt mg-rg-6"></span>{common.label.social}<span class="badge gadafic-social-alert-badge">4</span></a></li>
+			</ul>
+		</div>
+		
+		<ul class="nav navbar-nav navbar-right">
+			
+			<li  class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-graduation-cap mg-rg-6"></span><b>Connecté ok</b><span class="caret mg-lf-6"></span></a>
+				<ul class="dropdown-menu" data-dropdown-in="flipInY" data-dropdown-out="flipOutY" style="width: 220px">
+					<li><a href="#"><span class="fa fa-user mg-rg-6"></span>Eleve</a></li>
+					<li><a href="#"><span class="fa fa-graduation-cap mg-rg-6"></span>Etudiant</a></li>
+					<li><a href="#"><span class="fa fa-users mg-rg-6"></span>Parent</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><span class="fa fa-home mg-rg-6"></span>Ecole Primaire</a></li>
+					<li><a href="#"><span class="fa fa-building mg-rg-6"></span>Ecole Secondaire</a></li>
+					<li><a href="#"><span class="fa fa-university mg-rg-6"></span>Ecole Superieure</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><span class="fa fa-user-circle-o mg-rg-6"></span>Autheur/Chercheur</a></li>
+					<li><a href="#"><span class="fa fa-bookmark-o mg-rg-6"></span>Librairie</a></li>
+					<li><a href="#"><span class="fa fa-newspaper-o mg-rg-6"></span>Maison d'Edition</a></li>
+					<li><a href="#"><span class="fa fa-building-o mg-rg-6"></span>Organisation</a></li>
+				</ul>
+			</li>
+				
+			<li class="dropdown">
+				
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-plug"></span><b>{common.label.connect}</b> <span class="caret"></span></a>
+			
+				<ul id="login-dp" class="dropdown-menu" data-dropdown-in="flipInX" data-dropdown-out="flipOutX" >
+					<li>
+						<div class="row">
+							
+							<div class="col-md-12">
+							
+								<!-- Login -->
+								<form name="login-form" class="login-form" action="" method="post">
+								
+									<div class="social-buttons">
+										<div class="iconSpecial"><i class="glyphicon glyphicon-user mg-rg-6"></i>Login</div>
+									</div>
+								
+									<div class="divider-fine"></div>
+									
+									<br />
+									<br />
+									
+									<div class="content">	
+									
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">                                        
+										</div>
+									
+										<div style="margin-bottom: 25px" class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+											<input id="login-password" type="password" class="form-control" name="password" placeholder="Password">
+										</div>
+										<a href="#" style="float: right; font-size: 85%">Mot de passe oublie ?</a>
+									
+									</div>
+
+									<div class="footer">
+										<button href="#" class="button"><span class="fa fa-unlock mg-rg-6"></span><b>Login</b></button>
+									</div>
+								
+								</form>
+									
+							</div>
+							
+						</div>
+						
+					</li>
+				</ul>
+				
+			</li>
+				
+		</ul>
+	
+	</div>
+	
+</nav>

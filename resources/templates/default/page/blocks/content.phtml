@@ -1,10 +1,19 @@
-<?=$this->lodNav()?>
+<div id="app-page-content">
+	
+	<div id="app-page-content-header">
+		<div id="app-page-content-nav"><?=$this->loadNav()?></div>
+	</div>
 
-<!-- page container -->
-<div id="app-page-content"><?=$this->section('content')?></div>
+	<div id="app-page-content-boby">
+		<div id="app-page-content-sidebar-left"><?=$this->loadSidebarLeft()?></div>
+		<div id="app-page-content-holder"><?=$this->loadContent()?></div>
+		<div id="app-page-content-sidebar-right"><?=$this->loadSidebarRight()?></div>
+	</div>
+
+</div>
 
 <!-- dialogs -->
-<div id="app-page-dialogs"><?=$this->section('dialogs')?></div>
+<div id="app-page-dialogs"><?=$this->insert('content-elements/dialogs')?></div>
 
 <!-- Chat -->
 <?php if ($this->section('vchat')): ?>

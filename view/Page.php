@@ -32,8 +32,8 @@ class Page {
 
 		$this->template = $this->engine->make('page::main');
 
-		$this->config = require $tplRootDir.'/config.php';
-		
+		$this->config = Util::loadDatas("{$tplRootDir}/config");
+
 		$this->loadTranslations();
 	}
 	
@@ -70,8 +70,12 @@ class Page {
 
 		list($p, $m, $c, $a) = explode('/', $this->getRequestPath());
 
-		$languagestr = $this->request->getConfig()->getLanguageStr($this->request->getLanguage());
-		$languagesrc = $this->request->getConfig()->getLanguagesPath() . '/' . $languagestr;
+		$languagestr = $this->request
+		                    ->getConfig()
+							->getLanguageStr($this->request->getLanguage());
+		$languagesrc = $this->request
+							->getConfig()
+							->getLanguagesPath() . '/' . $languagestr;
 
 		// $this->config = Util::loadDatas($languagesrc . '/config');
 
